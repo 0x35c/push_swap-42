@@ -6,13 +6,13 @@
 /*   By: ulayus <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/02 21:45:16 by ulayus            #+#    #+#             */
-/*   Updated: 2022/10/05 10:15:58 by ulayus           ###   ########.fr       */
+/*   Updated: 2022/11/28 13:41:26 by ulayus           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_lstadd_front(t_list **lst, t_list *new)
+void	ft_lstadd_front(t_lst **lst, t_lst *new)
 {
 	if (!lst || !new)
 		return ;

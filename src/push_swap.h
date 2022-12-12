@@ -1,21 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstdelone.c                                     :+:      :+:    :+:   */
+/*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ulayus <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/03 11:47:20 by ulayus            #+#    #+#             */
-/*   Updated: 2022/11/28 13:41:39 by ulayus           ###   ########.fr       */
+/*   Created: 2022/11/21 11:19:29 by ulayus            #+#    #+#             */
+/*   Updated: 2022/11/25 18:19:11 by ulayus           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#ifndef PUSH_SWAP_H
+# define PUSH_SWAP_H
 
-void	ft_lstdelone(t_lst *lst, void (*del)(void *))
-{
-	if (!lst || !del)
-		return ;
-	del(lst->content);
-	free(lst);
-}
+# include "parsing.h"
+# include "sort.h"
+# include "normalize.h"
+# include "algo.h"
+
+#endif

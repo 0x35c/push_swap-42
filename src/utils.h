@@ -1,19 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.h                                        :+:      :+:    :+:   */
+/*   utils.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ulayus <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/21 11:19:29 by ulayus            #+#    #+#             */
-/*   Updated: 2022/11/21 21:19:10 by ulayus           ###   ########.fr       */
+/*   Created: 2022/11/24 11:25:31 by ulayus            #+#    #+#             */
+/*   Updated: 2022/12/12 15:35:37 by ulayus           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PUSH_SWAP_H
-# define PUSH_SWAP_H
+#ifndef UTILS_H
+# define UTILS_H
 
-# include "parsing.h"
-# include "sort.h"
+# include <stddef.h>
+# include <stdlib.h>
+# include "struct.h"
+
+size_t	nb_values(t_list *head_a);
+int		*sort_int_tab(int *tab, int len);
+void	ft_listadd_front(t_list **lst, t_list *new);
+void	ft_listadd_back(t_list **lst, t_list *new);
+t_list	*ft_listlast(t_list *lst);
+t_list	*ft_listnew(int index);
+
 
 #endif

@@ -6,74 +6,82 @@
 /*   By: ulayus <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/21 18:43:21 by ulayus            #+#    #+#             */
-/*   Updated: 2022/11/21 18:44:37 by ulayus           ###   ########.fr       */
+/*   Updated: 2022/12/12 14:22:58 by ulayus           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "instructions.h"
 
-void	ra(t_sort_list **head_a)
+void	ra(t_list **head_a)
 {
-	t_sort_list	*lst;
-	t_sort_list	*tmp;
+	t_list	*tmp;
 
 	tmp = *head_a;
-	lst = *head_a;
-	*head_a = (*head_a)->next;
-	while (lst->next)
-		lst = lst->next;
-	lst->next = tmp;
-	lst->next->next = NULL;
+	ft_listadd_back(head_a, tmp);
+	if ((*head_a)->next)
+		*head_a = (*head_a)->next;
 	ft_printf("ra\n");
 }
 
-void	rb(t_sort_list **head_b)
+void	rb(t_list **head_b)
 {
-	t_sort_list	*lst;
-	t_sort_list	*tmp;
+	t_list	*tmp;
 
 	tmp = *head_b;
-	lst = *head_b;
-	*head_b = (*head_b)->next;
-	while (lst->next)
-		lst = lst->next;
-	lst->next = tmp;
-	lst->next->next = NULL;
+	ft_listadd_back(head_b, tmp);
+	if ((*head_b)->next)
+		*head_b = (*head_b)->next;
 	ft_printf("rb\n");
 }
 
-void	rr(t_sort_list **head_a, t_sort_list **head_b)
+void	rr(t_list **head_a, t_list **head_b)
 {
 	ra(head_a);
 	rb(head_b);
 }
 
-void	rra(t_sort_list **head_a)
+void	rra(t_list **head_a)
 {
-	t_sort_list	*lst;
-	t_sort_list	*tmp;
+	t_list	*lst;
+	t_list	*tmp;
+	size_t	len;
+	size_t	count;
 
+	if (!head_a)
+		return ;
+	len = nb_values(*head_a);
+	tmp = ft_listlast(*head_a);
+	ft_listadd_front(head_a, tmp);
 	lst = *head_a;
-	while (lst->next->next)
+	count = 1;
+	while (count < len)
+	{
 		lst = lst->next;
-	tmp = *head_a;
-	lst->next->next = *head_a;
-	*head_a = lst->next;
+		count++;
+	}
 	lst->next = NULL;
-	ft_printf("ra\n");
+	ft_printf("rra\n");
 }
 
-void	rrb(t_sort_list **head_b)
+void	rrb(t_list **head_b)
 {
-	t_sort_list	*lst;
-	t_sort_list	*tmp;
+	t_list	*lst;
+	t_list	*tmp;
+	size_t	len;
+	size_t	count;
 
+	if (!head_b)
+		return ;
+	len = nb_values(*head_b);
+	tmp = ft_listlast(*head_b);
+	ft_listadd_front(head_b, tmp);
 	lst = *head_b;
-	while (lst->next->next)
+	count = 1;
+	while (count < len)
+	{
 		lst = lst->next;
-	tmp = *head_b;
-	lst->next->next = *head_b;
-	*head_b = lst->next;
+		count++;
+	}
 	lst->next = NULL;
-	ft_printf("rb\n");
+	ft_printf("rrb\n");
 }

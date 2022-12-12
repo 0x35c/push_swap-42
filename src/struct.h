@@ -1,21 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstdelone.c                                     :+:      :+:    :+:   */
+/*   struct.h                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ulayus <marvin@42.fr>                      +#+  +:+       +#+        */
+/*   By: ulayus <ulayus@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/03 11:47:20 by ulayus            #+#    #+#             */
-/*   Updated: 2022/11/28 13:41:39 by ulayus           ###   ########.fr       */
+/*   Created: 2022/11/17 18:22:49 by ulayus            #+#    #+#             */
+/*   Updated: 2022/12/04 14:20:24 by ulayus           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#ifndef STRUCT_H
+# define STRUCT_H
 
-void	ft_lstdelone(t_lst *lst, void (*del)(void *))
+typedef struct s_list
 {
-	if (!lst || !del)
-		return ;
-	del(lst->content);
-	free(lst);
-}
+	int				nb;
+	int				index;
+	struct s_list	*next;
+}					t_list;
+
+typedef struct s_mark
+{
+	int	len;
+	int	len_packs;
+	int	low;
+	int	high;
+}		t_mark;
+
+#endif

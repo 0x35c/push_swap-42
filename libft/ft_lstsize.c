@@ -6,13 +6,13 @@
 /*   By: ulayus <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/02 21:47:38 by ulayus            #+#    #+#             */
-/*   Updated: 2022/10/03 11:33:41 by ulayus           ###   ########.fr       */
+/*   Updated: 2022/11/28 13:42:18 by ulayus           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_lstsize(t_list *lst)
+int	ft_lstsize(t_lst *lst)
 {
 	int	count;
 

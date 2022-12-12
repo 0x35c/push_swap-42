@@ -6,7 +6,7 @@
 /*   By: ulayus <ulayus@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/17 18:21:50 by ulayus            #+#    #+#             */
-/*   Updated: 2022/11/17 20:49:54 by ulayus           ###   ########.fr       */
+/*   Updated: 2022/11/28 13:39:21 by ulayus           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,13 +41,13 @@ char	*ft_strjoin_space(char *s1, char const *s2)
 	return (str);
 }
 
-t_sort_list	*add_node(char *str, t_sort_list *head)
+t_list	*add_node(char *str, t_list *head)
 {
-	t_sort_list	*tmp;
-	t_sort_list	*node;
+	t_list	*tmp;
+	t_list	*node;
 
 	tmp = head;
-	node = malloc(sizeof(t_sort_list));
+	node = malloc(sizeof(t_list));
 	if (!node)
 		return (NULL);
 	node->nb = ft_atoi(str);
@@ -61,9 +61,9 @@ t_sort_list	*add_node(char *str, t_sort_list *head)
 	return (head);
 }
 
-t_sort_list	*create_list(int ac, char **av)
+t_list	*create_list(int ac, char **av)
 {
-	t_sort_list	*head;
+	t_list	*head;
 	char		*tmp;
 	char		**strs;
 	int			i;

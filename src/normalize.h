@@ -1,20 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   sort.h                                             :+:      :+:    :+:   */
+/*   normalize.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ulayus <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/21 21:15:51 by ulayus            #+#    #+#             */
-/*   Updated: 2022/11/21 21:17:38 by ulayus           ###   ########.fr       */
+/*   Created: 2022/11/24 11:38:27 by ulayus            #+#    #+#             */
+/*   Updated: 2022/11/28 13:38:13 by ulayus           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef SORT_H
-# define SORT_H
+#ifndef NORMALIZE_H
+# define NORMALIZE_H
 
-# include "instructions.h"
-
-void	sort_three(t_sort_list **head_a, t_sort_list **head_b);
+void	add_index(t_list **head_a);
 
 #endif

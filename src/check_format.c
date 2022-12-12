@@ -6,7 +6,7 @@
 /*   By: ulayus <ulayus@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/17 18:22:06 by ulayus            #+#    #+#             */
-/*   Updated: 2022/11/22 10:39:52 by ulayus           ###   ########.fr       */
+/*   Updated: 2022/11/28 13:40:02 by ulayus           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,14 +14,14 @@
 
 void	ft_exit(void *elem, int flag)
 {
-	t_sort_list	*tmp;
+	t_list	*tmp;
 
 	if (flag == DOUBLE || flag == SORTED)
 	{
-		while (((t_sort_list *)elem))
+		while (((t_list *)elem))
 		{
-			tmp = ((t_sort_list *)elem);
-			elem = ((t_sort_list *)elem)->next;
+			tmp = ((t_list *)elem);
+			elem = ((t_list *)elem)->next;
 			free(tmp);
 		}
 	}
@@ -32,9 +32,9 @@ void	ft_exit(void *elem, int flag)
 	exit(1);
 }
 
-int	isdouble(t_sort_list *head)
+int	isdouble(t_list *head)
 {
-	t_sort_list	*tmp;
+	t_list	*tmp;
 
 	while (head->next)
 	{
@@ -50,7 +50,7 @@ int	isdouble(t_sort_list *head)
 	return (0);
 }
 
-int	issorted(t_sort_list *head)
+int	issorted(t_list *head)
 {
 	while (head->next)
 	{

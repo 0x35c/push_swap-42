@@ -1,22 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   struct.h                                           :+:      :+:    :+:   */
+/*   sort.h                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ulayus <ulayus@student.42.fr>              +#+  +:+       +#+        */
+/*   By: ulayus <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/17 18:22:49 by ulayus            #+#    #+#             */
-/*   Updated: 2022/11/17 18:25:25 by ulayus           ###   ########.fr       */
+/*   Created: 2022/11/21 21:15:51 by ulayus            #+#    #+#             */
+/*   Updated: 2022/11/28 13:38:42 by ulayus           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef STRUCT_H
-# define STRUCT_H
+#ifndef SORT_H
+# define SORT_H
 
-typedef struct s_sort_list
-{
-	int					nb;
-	struct s_sort_list	*next;
-}						t_sort_list;
+# include "instructions.h"
+# include "utils.h"
+
+void	sort_three(t_list **head_a);
+void	sort_four(t_list **head_a, t_list **head_b);
+void	sort_five(t_list **head_a, t_list **head_b);
 
 #endif

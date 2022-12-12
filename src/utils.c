@@ -1,21 +1,51 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstdelone.c                                     :+:      :+:    :+:   */
+/*   utils.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ulayus <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/03 11:47:20 by ulayus            #+#    #+#             */
-/*   Updated: 2022/11/28 13:41:39 by ulayus           ###   ########.fr       */
+/*   Created: 2022/11/24 11:23:19 by ulayus            #+#    #+#             */
+/*   Updated: 2022/12/04 14:32:48 by ulayus           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "utils.h"
 
-void	ft_lstdelone(t_lst *lst, void (*del)(void *))
+size_t	nb_values(t_list *head)
 {
-	if (!lst || !del)
-		return ;
-	del(lst->content);
-	free(lst);
+	size_t	len;
+
+	len = 0;
+	while (head)
+	{
+		head = head->next;
+		len++;
+	}
+	return (len);
+}
+
+int	*sort_int_tab(int *tab, int len)
+{
+	int	i;
+	int	j;
+	int	tmp;
+
+	i = 0;
+	while (i < len)
+	{
+		j = i + 1;
+		while (j < len)
+		{
+			if (tab[i] > tab[j])
+			{
+				tmp = tab[i];
+			 	tab[i] = tab[j];
+				tab[j] = tmp;
+			}
+			j++;
+		}
+		i++;
+	}
+	return (tab);
 }

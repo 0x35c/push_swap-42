@@ -6,15 +6,15 @@
 /*   By: ulayus <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/03 10:51:08 by ulayus            #+#    #+#             */
-/*   Updated: 2022/10/03 14:19:18 by ulayus           ###   ########.fr       */
+/*   Updated: 2022/11/28 13:41:12 by ulayus           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_lstadd_back(t_list **lst, t_list *new)
+void	ft_lstadd_back(t_lst **lst, t_lst *new)
 {
-	t_list	*tmp;
+	t_lst	*tmp;
 
 	if (!(*lst))
 	{
