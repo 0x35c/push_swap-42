@@ -6,7 +6,7 @@
 /*   By: ulayus <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/25 17:44:48 by ulayus            #+#    #+#             */
-/*   Updated: 2022/12/14 14:32:01 by ulayus           ###   ########.fr       */
+/*   Updated: 2022/12/13 10:54:12 by ulayus           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,36 +35,64 @@ t_mark	*send_packs(t_list **head_a, t_list **head_b)
 	if (marks == NULL)
 		return (NULL);
 	count = 0;
-	while (count < marks->len - 1)
+	while (count < marks->len && marks->high < marks->len)
 	{
 		send_split(&count, marks, head_a, head_b);
 		marks->high += marks->len_packs;
 		marks->low += marks->len_packs;
+		ft_printf("High: %d, low: %d\n", marks->high, marks->low);
 	}
 	return (marks);
 }
+
+//# include <sys/types.h>
 
 void	push_sorted_packs(t_list **head_a, t_list **head_b)
 {
 	t_mark	*marks;
 	int		count;
-	size_t	len;
+	//t_list	*tmpa = *head_a;
+	//t_list	*tmpb = *head_b;
 
 	marks = send_packs(head_a, head_b);
 	if (marks == NULL)
 		return ;
-	count = marks->len - 1;
-	while (count > -1)
+	count = marks->len - 2;
+	while (count)
     {            
-		len = nb_values(*head_b);
-		if (check_pos(head_b, count, len) == TOP)
-			while ((*head_b)->index != count)
+        if ((*head_b)->index == count)
+        {           
+            pa(head_a, head_b);
+            count--;
+        }           
+		else
+		{
+			return ;
+			/*
+			usleep(8000);
+			ft_printf("Index_b: %d\n", (*head_b)->index);
+			ft_printf("Index_a: %d\n", (*head_a)->index);
+			tmpa = tmpa->next;
+			tmpb = tmpb->next;
+			*/
+			/*
+			if (check_pos(head_b, count, marks->len) == TOP)
+			{
+				ft_printf("TOP\n");
+			}
+			else if (check_pos(head_b, count, marks->len) == BOT)
+			{
 				rb(head_b);
-		else if (check_pos(head_b, count, len) == BOT)
-			while ((*head_b)->index != count)
-				rrb(head_b);
-		pa(head_a, head_b);
-		count--;
+				ft_printf("BOT\n");
+			}
+			*/
+		}
+    }
+	/*
+		marks->high -= marks->len_packs;
+		push_top(&count, marks, head_a, head_b);	
+		push_bot(&count, head_a, head_b);	
+		marks->low -= marks->len_packs;
 	}
-	free(marks);
+	*/
 }

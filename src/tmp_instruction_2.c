@@ -6,7 +6,7 @@
 /*   By: ulayus <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/21 18:43:21 by ulayus            #+#    #+#             */
-/*   Updated: 2022/12/13 13:34:25 by ulayus           ###   ########.fr       */
+/*   Updated: 2022/12/13 10:32:08 by ulayus           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,31 +15,27 @@
 void	ra(t_list **head_a)
 {
 	t_list	*tmp;
-	t_list	*next;
+	t_list	*lst;
 
 	tmp = *head_a;
-	next = (*head_a)->next;
-	ft_listadd_back(&next, tmp);
-	*head_a = next;
+	tmp->next = NULL;
+	lst = (*head_a)->next;
+	ft_listadd_back(&lst, tmp);
+	*head_a = lst;
 	ft_printf("ra\n");
 }
 
 void	rb(t_list **head_b)
 {
 	t_list	*tmp;
-	t_list	*next;
+	t_list	*lst;
 
 	tmp = *head_b;
-	next = (*head_b)->next;
-	ft_listadd_back(&next, tmp);
-	*head_b = next;
+	tmp->next = NULL;
+	lst = (*head_b)->next;
+	ft_listadd_back(&lst, tmp);
+	*head_b = lst;
 	ft_printf("rb\n");
-}
-
-void	rr(t_list **head_a, t_list **head_b)
-{
-	ra(head_a);
-	rb(head_b);
 }
 
 void	rra(t_list **head_a)
@@ -49,7 +45,7 @@ void	rra(t_list **head_a)
 	size_t	len;
 	size_t	count;
 
-	if (!head_a)
+	if (!*head_a)
 		return ;
 	len = nb_values(*head_a);
 	tmp = ft_listlast(*head_a);
@@ -72,7 +68,7 @@ void	rrb(t_list **head_b)
 	size_t	len;
 	size_t	count;
 
-	if (!head_b)
+	if (!*head_b)
 		return ;
 	len = nb_values(*head_b);
 	tmp = ft_listlast(*head_b);

@@ -6,7 +6,7 @@
 /*   By: ulayus <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/25 18:18:00 by ulayus            #+#    #+#             */
-/*   Updated: 2022/12/12 14:59:41 by ulayus           ###   ########.fr       */
+/*   Updated: 2022/12/13 13:49:50 by ulayus           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,6 @@ void	push_sorted_packs(t_list **head_a, t_list **head_b);
 void	send_split(int *count, t_mark *mark, t_list **head_a, t_list **head_b);
 int		check_pos(t_list **head, int index, size_t len);
 void	push_top(int *count, t_mark *marks, t_list **head_a, t_list **head_b);
-void	push_bot(int *count, t_list **head_a, t_list **head_b);
+void	push_bot(int *count, t_mark *marks, t_list **head_a, t_list **head_b);
 
 #endif
