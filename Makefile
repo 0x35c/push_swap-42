@@ -6,14 +6,14 @@
 #    By: ulayus <marvin@42.fr>                      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/09/30 11:40:22 by ulayus            #+#    #+#              #
-#    Updated: 2022/12/12 18:53:51 by ulayus           ###   ########.fr        #
+#    Updated: 2022/12/20 16:40:20 by ulayus           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = push_swap
 
 SRC = src/parsing.c src/main.c src/check_format.c src/instructions_1.c\
-	  src/instructions_2.c src/sort.c src/utils.c src/normalize.c src/algo.c\
+	  src/instructions_2.c src/low_sort.c src/utils.c src/normalize.c src/algo.c\
 	  src/algo_utils.c src/lst_utils.c\
 
 CC = clang

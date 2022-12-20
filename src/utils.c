@@ -6,7 +6,7 @@
 /*   By: ulayus <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/24 11:23:19 by ulayus            #+#    #+#             */
-/*   Updated: 2022/12/04 14:32:48 by ulayus           ###   ########.fr       */
+/*   Updated: 2022/12/20 16:36:43 by ulayus           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,7 @@ int	*sort_int_tab(int *tab, int len)
 			if (tab[i] > tab[j])
 			{
 				tmp = tab[i];
-			 	tab[i] = tab[j];
+				tab[i] = tab[j];
 				tab[j] = tmp;
 			}
 			j++;

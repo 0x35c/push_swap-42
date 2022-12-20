@@ -6,7 +6,7 @@
 /*   By: ulayus <ulayus@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/17 18:22:06 by ulayus            #+#    #+#             */
-/*   Updated: 2022/12/14 13:21:06 by ulayus           ###   ########.fr       */
+/*   Updated: 2022/12/20 17:01:38 by ulayus           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,22 +31,18 @@ int	main(int ac, char **av)
 	else if (issorted(head_a))
 		ft_exit(head_a, SORTED);
 	add_index(&head_a);
-	push_sorted_packs(&head_a, &head_b);
-	//sort_five(&head_a, &head_b);
-	//sort_three(&head_a);
-	ft_printf("\n");
+	if (nb_values(head_a) == 3)
+		sort_three(&head_a);
+	else if (nb_values(head_a) == 4)
+		sort_four(&head_a, &head_b);
+	else if (nb_values(head_a) == 5)
+		sort_five(&head_a, &head_b);
+	else
+		push_sorted_packs(&head_a, &head_b);
 	while (head_a)
 	{
-		tmp = head_a; 
+		tmp = head_a;
 		head_a = head_a->next;
-		//ft_printf("A: value: %d, index:%d\n", tmp->nb, tmp->index);
-		free(tmp);
-	}
-	while (head_b)
-	{
-		tmp = head_b; 
-		head_b = head_b->next;
-		//ft_printf("B: value: %d, index:%d\n", tmp->nb, tmp->index);
 		free(tmp);
 	}
 	return (0);

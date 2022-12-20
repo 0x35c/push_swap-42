@@ -6,7 +6,7 @@
 /*   By: ulayus <ulayus@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/17 18:21:50 by ulayus            #+#    #+#             */
-/*   Updated: 2022/11/28 13:39:21 by ulayus           ###   ########.fr       */
+/*   Updated: 2022/12/20 16:34:24 by ulayus           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,9 +64,9 @@ t_list	*add_node(char *str, t_list *head)
 t_list	*create_list(int ac, char **av)
 {
 	t_list	*head;
-	char		*tmp;
-	char		**strs;
-	int			i;
+	char	*tmp;
+	char	**strs;
+	int		i;
 
 	tmp = NULL;
 	i = 1;
