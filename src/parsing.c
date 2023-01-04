@@ -6,7 +6,7 @@
 /*   By: ulayus <ulayus@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/17 18:21:50 by ulayus            #+#    #+#             */
-/*   Updated: 2022/12/20 16:34:24 by ulayus           ###   ########.fr       */
+/*   Updated: 2023/01/02 23:30:10 by ulayus           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,6 +72,8 @@ t_list	*create_list(int ac, char **av)
 	i = 1;
 	while (i < ac)
 	{
+		if (isempty(av[i]))
+			ft_exit(tmp, INVALID);
 		tmp = ft_strjoin_space(tmp, av[i]);
 		i++;
 	}
@@ -79,6 +81,7 @@ t_list	*create_list(int ac, char **av)
 		ft_exit(tmp, NOT_NB);
 	strs = ft_split(tmp, ' ');
 	free(tmp);
+	check_format(strs);
 	head = NULL;
 	i = 0;
 	while (strs[i])

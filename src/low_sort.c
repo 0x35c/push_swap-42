@@ -6,11 +6,20 @@
 /*   By: ulayus <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/21 20:53:34 by ulayus            #+#    #+#             */
-/*   Updated: 2022/12/20 17:17:50 by ulayus           ###   ########.fr       */
+/*   Updated: 2023/01/02 19:57:35 by ulayus           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "sort.h"
+
+void	sort_two(t_list **head_a)
+{
+	const int	a = (*head_a)->index;
+	const int	b = (*head_a)->next->index;
+
+	if (a > b)
+		sa(head_a);
+}
 
 void	sort_three(t_list **head_a)
 {

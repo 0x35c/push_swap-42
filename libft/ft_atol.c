@@ -1,28 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   utils.h                                            :+:      :+:    :+:   */
+/*   ft_atol.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ulayus <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/24 11:25:31 by ulayus            #+#    #+#             */
-/*   Updated: 2023/01/02 22:45:18 by ulayus           ###   ########.fr       */
+/*   Created: 2022/09/26 19:21:00 by ulayus            #+#    #+#             */
+/*   Updated: 2023/01/02 19:24:30 by ulayus           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef UTILS_H
-# define UTILS_H
+#include "libft.h"
 
-# include <stddef.h>
-# include <stdlib.h>
-# include "../libft/libft.h"
-# include "struct.h"
+long	ft_atol(const char *nptr)
+{
+	int		i;
+	int		sign;
+	long	result;
 
-size_t	nb_values(t_list *head_a);
-int		*sort_int_tab(int *tab, int len);
-void	ft_listadd_front(t_list **lst, t_list *new);
-void	ft_listadd_back(t_list **lst, t_list *new);
-t_list	*ft_listlast(t_list *lst);
-int		isempty(char *str);
-
-#endif
+	i = 0;
+	sign = 1;
+	result = 0;
+	while ((nptr[i] >= '\t' && nptr[i] <= '\r') || nptr[i] == 32)
+		i++;
+	if (nptr[i] == '-' || nptr[i] == '+')
+	{
+		if (nptr[i] == '-')
+			sign *= -1;
+		i++;
+	}
+	while (nptr[i] < 58 && nptr[i] > 47)
+	{
+		result = result * 10 + (nptr[i] - 48);
+		i++;
+	}
+	return (result * sign);
+}

@@ -6,7 +6,7 @@
 /*   By: ulayus <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/24 11:23:19 by ulayus            #+#    #+#             */
-/*   Updated: 2022/12/20 16:36:43 by ulayus           ###   ########.fr       */
+/*   Updated: 2023/01/02 22:48:44 by ulayus           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,4 +48,22 @@ int	*sort_int_tab(int *tab, int len)
 		i++;
 	}
 	return (tab);
+}
+
+int	isempty(char *str)
+{
+	int	i;
+	int	count;
+
+	i = 0;
+	count = 0;
+	while (str[i])
+	{
+		if (ft_isspace(str[i]))
+			count++;
+		i++;
+	}
+	if (count == i || i == 0)
+		return (1);
+	return (0);
 }
