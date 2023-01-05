@@ -6,7 +6,7 @@
 /*   By: ulayus <ulayus@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/17 18:21:50 by ulayus            #+#    #+#             */
-/*   Updated: 2023/01/02 23:30:10 by ulayus           ###   ########.fr       */
+/*   Updated: 2023/01/05 17:22:56 by ulayus           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,9 +61,8 @@ t_list	*add_node(char *str, t_list *head)
 	return (head);
 }
 
-t_list	*create_list(int ac, char **av)
+char	**split_args(int ac, char **av)
 {
-	t_list	*head;
 	char	*tmp;
 	char	**strs;
 	int		i;
@@ -72,15 +71,23 @@ t_list	*create_list(int ac, char **av)
 	i = 1;
 	while (i < ac)
 	{
+		tmp = ft_strjoin_space(tmp, av[i]);
 		if (isempty(av[i]))
 			ft_exit(tmp, INVALID);
-		tmp = ft_strjoin_space(tmp, av[i]);
 		i++;
 	}
-	if (!ft_isnum(tmp))
-		ft_exit(tmp, NOT_NB);
 	strs = ft_split(tmp, ' ');
 	free(tmp);
+	return (strs);
+}
+
+t_list	*create_list(int ac, char **av)
+{
+	t_list	*head;
+	char	**strs;
+	int		i;
+
+	strs = split_args(ac, av);
 	check_format(strs);
 	head = NULL;
 	i = 0;

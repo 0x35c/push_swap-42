@@ -6,7 +6,7 @@
 /*   By: ulayus <ulayus@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/17 18:22:06 by ulayus            #+#    #+#             */
-/*   Updated: 2023/01/02 22:32:30 by ulayus           ###   ########.fr       */
+/*   Updated: 2023/01/05 16:09:19 by ulayus           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ void	ft_exit(void *elem, int flag)
 			free(tmp);
 		}
 	}
-	else if (flag == NOT_NB)
+	else if (flag == NOT_NB || flag == INVALID)
 		free(elem);
 	if (flag != SORTED)
 		ft_putstr_fd("Error\n", 2);

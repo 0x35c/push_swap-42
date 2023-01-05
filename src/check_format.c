@@ -6,7 +6,7 @@
 /*   By: ulayus <ulayus@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/02 21:40:27 by ulayus            #+#    #+#             */
-/*   Updated: 2023/01/02 23:35:51 by ulayus           ###   ########.fr       */
+/*   Updated: 2023/01/05 17:17:30 by ulayus           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,19 +29,18 @@ void	exit_error(char **strs)
 int	ft_isnum(char *str)
 {
 	int	i;
-	int	sign;
 
-	sign = 0;
-	if (str[0] == '+' || str[0] == '-')
-		sign = 1;
-	if (sign && (str[1] > '9' || str[1] < '0'))
-		return (0);
 	i = 0;
+	if (ft_strlen(str) > 1 && (str[0] == '+' || str[0] == '-'))
+	{
+		if (str[1] >= '0' || str[1] <= '9')
+			i++;
+		else
+			return (0);
+	}
 	while (str[i])
 	{
-		if ((str[i] < '0' || str[i] > '9') && !ft_isspace(str[i]) && !sign)
-			return (0);
-		else if (!sign && (str[i] == '+' || str[i] == '-'))
+		if ((str[i] < '0' || str[i] > '9') && !ft_isspace(str[i]))
 			return (0);
 		i++;
 	}

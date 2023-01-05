@@ -6,7 +6,7 @@
 /*   By: ulayus <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/24 11:23:19 by ulayus            #+#    #+#             */
-/*   Updated: 2023/01/02 22:48:44 by ulayus           ###   ########.fr       */
+/*   Updated: 2023/01/05 16:06:39 by ulayus           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,6 +57,8 @@ int	isempty(char *str)
 
 	i = 0;
 	count = 0;
+	if (str == NULL)
+		return (1);
 	while (str[i])
 	{
 		if (ft_isspace(str[i]))
