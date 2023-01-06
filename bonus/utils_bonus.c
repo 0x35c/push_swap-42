@@ -6,7 +6,7 @@
 /*   By: ulayus <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/24 11:23:19 by ulayus            #+#    #+#             */
-/*   Updated: 2023/01/05 18:25:33 by ulayus           ###   ########.fr       */
+/*   Updated: 2023/01/06 16:31:42 by ulayus           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,4 +68,22 @@ int	isempty(char *str)
 	if (count == i || i == 0)
 		return (1);
 	return (0);
+}
+
+void	free_stacks(t_list *head_a, t_list *head_b)
+{
+	t_list	*tmp;
+
+	while (head_a)
+	{
+		tmp = head_a;
+		head_a = head_a->next;
+		free(tmp);
+	}
+	while (head_b)
+	{
+		tmp = head_b;
+		head_b = head_b->next;
+		free(tmp);
+	}
 }

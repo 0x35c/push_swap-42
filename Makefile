@@ -6,7 +6,7 @@
 #    By: ulayus <marvin@42.fr>                      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/09/30 11:40:22 by ulayus            #+#    #+#              #
-#    Updated: 2023/01/05 18:29:06 by ulayus           ###   ########.fr        #
+#    Updated: 2023/01/06 15:30:54 by ulayus           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -20,7 +20,9 @@ SRC = src/parsing.c src/main.c src/check_format.c src/check_list.c\
 
 SRC_B = bonus/check_format_bonus.c bonus/check_list_bonus.c\
 	  bonus/instructions_1_bonus.c bonus/instructions_2_bonus.c\
-	  bonus/lst_utils_bonus.c bonus/utils_bonus.c\
+	  bonus/lst_utils_bonus.c bonus/utils_bonus.c bonus/parsing_bonus.c\
+	  bonus/normalize_bonus.c bonus/instructions_parser_bonus.c\
+	  bonus/checker_bonus.c\
 
 CC = @clang
 

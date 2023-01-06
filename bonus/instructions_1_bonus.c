@@ -6,7 +6,7 @@
 /*   By: ulayus <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/21 11:07:31 by ulayus            #+#    #+#             */
-/*   Updated: 2023/01/05 18:23:18 by ulayus           ###   ########.fr       */
+/*   Updated: 2023/01/06 15:28:51 by ulayus           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,6 @@ void	sa(t_list **head_a)
 	tmp = (*head_a)->nb;
 	(*head_a)->nb = (*head_a)->next->nb;
 	(*head_a)->next->nb = tmp;
-	ft_printf("sa\n");
 }
 
 void	sb(t_list **head_b)
@@ -35,7 +34,6 @@ void	sb(t_list **head_b)
 	tmp = (*head_b)->nb;
 	(*head_b)->nb = (*head_b)->next->nb;
 	(*head_b)->next->nb = tmp;
-	ft_printf("sb\n");
 }
 
 void	ss(t_list **head_a, t_list **head_b)
@@ -57,7 +55,6 @@ void	pa(t_list **head_a, t_list **head_b)
 	else
 		tmp->next = NULL;
 	*head_a = tmp;
-	ft_printf("pa\n");
 }
 
 void	pb(t_list **head_a, t_list **head_b)
@@ -73,5 +70,4 @@ void	pb(t_list **head_a, t_list **head_b)
 	else
 		tmp->next = NULL;
 	*head_b = tmp;
-	ft_printf("pb\n");
 }

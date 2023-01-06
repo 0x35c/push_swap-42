@@ -6,12 +6,12 @@
 /*   By: ulayus <ulayus@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/17 18:48:44 by ulayus            #+#    #+#             */
-/*   Updated: 2023/01/05 18:25:11 by ulayus           ###   ########.fr       */
+/*   Updated: 2023/01/06 16:34:30 by ulayus           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PARSING_H
-# define PARSING_H
+#ifndef PARSING_BONUS_H
+# define PARSING_BONUS_H
 
 # include "utils_bonus.h"
 # define INVALID 0

@@ -6,7 +6,7 @@
 /*   By: ulayus <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/21 18:43:21 by ulayus            #+#    #+#             */
-/*   Updated: 2023/01/05 18:23:31 by ulayus           ###   ########.fr       */
+/*   Updated: 2023/01/06 15:29:05 by ulayus           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,6 @@ void	ra(t_list **head_a)
 	next = (*head_a)->next;
 	ft_listadd_back(&next, tmp);
 	*head_a = next;
-	ft_printf("ra\n");
 }
 
 void	rb(t_list **head_b)
@@ -33,7 +32,6 @@ void	rb(t_list **head_b)
 	next = (*head_b)->next;
 	ft_listadd_back(&next, tmp);
 	*head_b = next;
-	ft_printf("rb\n");
 }
 
 void	rr(t_list **head_a, t_list **head_b)
@@ -62,7 +60,6 @@ void	rra(t_list **head_a)
 		count++;
 	}
 	lst->next = NULL;
-	ft_printf("rra\n");
 }
 
 void	rrb(t_list **head_b)
@@ -85,5 +82,4 @@ void	rrb(t_list **head_b)
 		count++;
 	}
 	lst->next = NULL;
-	ft_printf("rrb\n");
 }

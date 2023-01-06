@@ -1,31 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   struct_bonus.h                                     :+:      :+:    :+:   */
+/*   ft_strcmp.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ulayus <ulayus@student.42.fr>              +#+  +:+       +#+        */
+/*   By: ulayus <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/17 18:22:49 by ulayus            #+#    #+#             */
-/*   Updated: 2023/01/06 16:34:48 by ulayus           ###   ########.fr       */
+/*   Created: 2022/07/18 11:18:18 by ulayus            #+#    #+#             */
+/*   Updated: 2022/07/25 09:41:58 by ulayus           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef STRUCT_BONUS_H
-# define STRUCT_BONUS_H
-
-typedef struct s_list
+int	ft_strcmp(char *s1, char *s2)
 {
-	int				nb;
-	int				index;
-	struct s_list	*next;
-}					t_list;
+	int	i;
 
-typedef struct s_mark
-{
-	int	len;
-	int	len_packs;
-	int	low;
-	int	high;
-}		t_mark;
-
-#endif
+	i = 0;
+	while (s1[i] != '\0' && s1[i] == s2[i])
+		i++;
+	return (s1[i] - s2[i]);
+}	

@@ -6,7 +6,7 @@
 /*   By: ulayus <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/30 00:10:23 by ulayus            #+#    #+#             */
-/*   Updated: 2023/01/02 19:24:13 by ulayus           ###   ########.fr       */
+/*   Updated: 2023/01/06 16:43:11 by ulayus           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,7 @@
 # include <unistd.h>
 # include <limits.h>
 # include "printf/ft_printf.h"
+# include "gnl/get_next_line.h"
 
 int		ft_isalpha(int c);
 int		ft_isalnum(int c);
@@ -42,6 +43,7 @@ char	*ft_strjoin(char const *s1, char const *s2);
 char	*ft_strjoin_c(char *s1, char c);
 size_t	ft_strlcat(char *dest, const char *src, size_t size);
 size_t	ft_strlcpy(char *dst, const char *src, size_t size);
+int		ft_strcmp(char *s1, char *s2);
 int		ft_strncmp(const char *s1, const char *s2, size_t n);
 char	*ft_strnstr(const char *s1, const char *s2, size_t len);
 char	*ft_strtrim(char const *s1, char const *set);
