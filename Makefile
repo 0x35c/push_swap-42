@@ -6,7 +6,7 @@
 #    By: ulayus <marvin@42.fr>                      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/09/30 11:40:22 by ulayus            #+#    #+#              #
-#    Updated: 2023/01/06 15:30:54 by ulayus           ###   ########.fr        #
+#    Updated: 2023/01/06 17:29:17 by ulayus           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -60,7 +60,7 @@ ${BONUS}: ${OBJ_B}
 	@make -C ./libft > /dev/null
 	@printf '\x1b[38;2;50;205;50mLibft compiled 🤓\n\x1b[0m'
 	$(CC) ${OBJ_B} -o ${BONUS} $(LIBS)
-	@printf '\x1b[38;2;50;205;50mPush Swap compiled 🤓\n\x1b[0m'
+	@printf '\x1b[38;2;50;205;50mChecker compiled 🤓\n\x1b[0m'
 
 clean_b:
 	@rm -f $(OBJ_B)
