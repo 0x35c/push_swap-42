@@ -6,7 +6,7 @@
 /*   By: ulayus <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/21 18:43:21 by ulayus            #+#    #+#             */
-/*   Updated: 2023/01/06 15:29:05 by ulayus           ###   ########.fr       */
+/*   Updated: 2023/01/07 10:43:22 by ulayus           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,8 @@ void	rb(t_list **head_b)
 	t_list	*tmp;
 	t_list	*next;
 
+	if (*head_b == NULL || (*head_b)->next == NULL)
+		return ;
 	tmp = *head_b;
 	next = (*head_b)->next;
 	ft_listadd_back(&next, tmp);

@@ -6,7 +6,7 @@
 /*   By: ulayus <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/21 11:07:31 by ulayus            #+#    #+#             */
-/*   Updated: 2023/01/06 15:28:51 by ulayus           ###   ########.fr       */
+/*   Updated: 2023/01/07 10:42:59 by ulayus           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,8 @@ void	sb(t_list **head_b)
 {
 	int	tmp;
 
+	if (*head_b == NULL || (*head_b)->next == NULL)
+		return ;
 	tmp = (*head_b)->index;
 	(*head_b)->index = (*head_b)->next->index;
 	(*head_b)->next->index = tmp;
